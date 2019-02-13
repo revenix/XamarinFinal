@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+             x:Class="TemplateSpartaneApp.App">
+	<Application.Resources>
+        <Color x:Key="Primary">#283593</Color>
+        <Color x:Key="DarkPrimary">#001064</Color>
+        <Color x:Key="LightPrimary">#5f5fc4</Color>
+        <Color x:Key="Secondary">#d32f2f</Color>
+        <Color x:Key="DarkSecondary">#9a0007</Color>
+        <Color x:Key="LightSecondary">#ff6659</Color>
+        <Color x:Key="White">#ffffff</Color>
+        <Color x:Key="Black">Black</Color>
+        <!-- Application resource dictionary -->
+        <Style TargetType="NavigationPage">
+            <Setter Property="HasNavigationBar" Value="False" />
+            <Setter Property="BarTextColor" Value="White" />
+            <Setter Property="BarBackgroundColor" Value="Red" />
+        </Style>
+    </Application.Resources>
+</prism:PrismApplication>

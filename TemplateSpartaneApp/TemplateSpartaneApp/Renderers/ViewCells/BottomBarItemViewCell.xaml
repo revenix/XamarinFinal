@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+             x:Class="TemplateSpartaneApp.Renderers.ViewCells.BottomBarItemViewCell">
+  <ContentView.Content>
+      <StackLayout Spacing="1">
+            <Bases:IconAwesomeLabelBase
+                FontIcon="Light"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                TextColor="{Binding IconColor}"
+                Icon="{Binding Icon}"/>
+            <Bases:LabelBase
+                FontSize="Micro"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                TextColor="{Binding TitleColor}"
+                DefineFont="Primary"
+                Text="{Binding Title}"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

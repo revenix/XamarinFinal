@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bases:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+             x:Class="TemplateSpartaneApp.Views.Home.HomePage">
+    <ContentPage.Content>
+        <Grid ColumnSpacing="0" RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Bases:ToolbarBase Grid.Row="0" Grid.Column="0"/>
+            <ScrollView Grid.Row="1" Grid.Column="0">
+                <StackLayout Margin="16">
+                    <Bases:LabelBase Text="Entries" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:BorderEntryBase 
+                        Placeholder="Border Entry" 
+                        BorderColor="{StaticResource Primary}" 
+                        BorderWidth="2"/>
+                    <Bases:BorderlessEntryBase Placeholder="Borderless Entry"/>
+                    <Bases:LabelBase Text="Buttons" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:ButtonBase DefineFont="Primary" TextColor="White" Text="Button Base" BackgroundColor="{StaticResource Primary}"/>
+                    <Bases:IconAwesomeButtonBase Icon="Gamepad" TextColor="White" BackgroundColor="{StaticResource Primary}" BorderColor="{StaticResource Primary}"/>
+                    <Bases:LabelBase Text="Pickers" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:DatePickerBase BorderColor="{StaticResource Primary}" BorderWidth="2" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:PickerWithIconBase Title="Picker with icon" Icon="down" TitleColor="{StaticResource DarkPrimary}" BorderColor="{StaticResource Primary}" BorderWidth="2" TextColor="{StaticResource DarkPrimary}" IconWidth="40" IconHeight="40"/>
+                    <Bases:LabelBase Text="Type Font" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:LabelBase Text="Primary Font" FontSize="Large" DefineFont="Primary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:LabelBase Text="Secondary Font" FontSize="Large" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:LabelBase Text="Font Size" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:LabelBase FontSize="Default" Text="Deafault" DefineFont="Secondary" TextColor="{StaticResource Primary}"/>
+                    <Bases:LabelBase FontSize="Large" Text="Large" DefineFont="Secondary" TextColor="{StaticResource Primary}"/>
+                    <Bases:LabelBase FontSize="Medium" Text="Medium" DefineFont="Secondary" TextColor="{StaticResource Primary}"/>
+                    <Bases:LabelBase FontSize="Micro" Text="Micro" DefineFont="Secondary" TextColor="{StaticResource Primary}"/>
+                    <Bases:LabelBase FontSize="Small" Text="Small" DefineFont="Secondary" TextColor="{StaticResource Primary}"/>
+                    <Bases:LabelBase Text="Toolbars" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
+                    <Bases:ToolbarBase HeightRequest="56"/>
+                    <Bases:ToolbarBackBase HeightRequest="56"/>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</Bases:ContentPageBase>

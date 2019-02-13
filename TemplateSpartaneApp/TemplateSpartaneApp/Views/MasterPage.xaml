@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+             x:Class="TemplateSpartaneApp.Views.MasterPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menú" BackgroundColor="{StaticResource Primary}">
+            <Grid Margin="16">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="0">
+                    <ffimageloading:CachedImage
+                        HorizontalOptions="Start"
+			            WidthRequest="80" HeightRequest="80"
+			            DownsampleToViewSize="true"
+			            Source = "{Binding ImageUser}">
+                        <ffimageloading:CachedImage.Transformations>
+                            <fftransformations:CircleTransformation/>
+                        </ffimageloading:CachedImage.Transformations>
+                    </ffimageloading:CachedImage>
+                    <Bases:LabelBase DefineFont="Primary" Text="{Binding Username}" TextColor="#fec933"/>
+                    <BoxView HorizontalOptions="FillAndExpand" BackgroundColor="White" HeightRequest="1" Margin="0,16,0,16"/>
+                </StackLayout>
+                
+                <ListView SelectedItem="{Binding SelectItem,Mode=TwoWay}" Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent" ItemsSource="{Binding ItemsMenu}" SeparatorVisibility="None">
+                    <ListView.ItemTemplate >
+                        <DataTemplate >
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="Transparent">
+                                    <Bases:IconAwesomeLabelBase 
+                                        Icon="{Binding Icon}" 
+                                        FontIcon="Light"
+                                        VerticalOptions="Center" 
+                                        FontSize="22" 
+                                        TextColor="White"
+                                        WidthRequest="30" 
+                                        HeightRequest="25"/>
+                                    <Bases:LabelBase DefineFont="Primary" Text="{ Binding Title }" TextColor="White" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Fill"  />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Behaviors>
+                        <b:EventToCommandBehavior EventName="ItemTapped" Command="{Binding OnSelectItemCommand}" />
+                    </ListView.Behaviors>
+                </ListView>
+                <Frame Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent" BorderColor="White" CornerRadius="5" OutlineColor="White" Padding="0">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseSessionCommand}"/>
+                    </Frame.GestureRecognizers>
+                    <StackLayout HorizontalOptions="Center"  Orientation="Horizontal" BackgroundColor="Transparent" VerticalOptions="Center">
+                        <Bases:IconAwesomeLabelBase
+                            Icon="SignOutAlt"
+                            FontIcon="Light"
+                            VerticalOptions="Center" 
+                            FontSize="22" 
+                            TextColor="White"
+                            WidthRequest="30" 
+                            HeightRequest="25"/>
+                        <Bases:LabelBase DefineFont="Primary" Text="Cerrar sesión" TextColor="White" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalOptions="Fill"  />
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

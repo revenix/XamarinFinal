@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="TemplateSpartaneApp.Renderers.Bases.BottomBarBase">
+  <ContentView.Content>
+        <Grid RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="56"/>
+            </Grid.RowDefinitions>
+            <Carousel:CarouselViewControl
+                PositionSelected="Carousel_PositionSelected"
+                Position="0"
+                BackgroundColor="Red"
+                Grid.Column="0" Grid.Row="0"
+                x:Name="carousel"
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="FillAndExpand">
+                <Carousel:CarouselViewControl.ItemTemplate >
+                    <DataTemplate>
+                        <ContentView Content="{Binding Page}"/>
+                    </DataTemplate>
+                </Carousel:CarouselViewControl.ItemTemplate>
+            </Carousel:CarouselViewControl>
+            <Frame Grid.Column="0" Grid.Row="1"
+                   BackgroundColor="{StaticResource Primary}"
+                    HasShadow="true" 
+                    CornerRadius="0" 
+                    Padding="10"
+                    OutlineColor="{StaticResource Primary}"
+                    BorderColor="{StaticResource Primary}">
+                <Grid x:Name="grid"  ColumnSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </Frame>
+        </Grid>
+  </ContentView.Content>
+</ContentView>

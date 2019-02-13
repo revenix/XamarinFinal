@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+             x:Class="TemplateSpartaneApp.Renderers.Bases.ToolbarBase">
+  <ContentView.Content>
+        <Frame 
+            BackgroundColor="{StaticResource Primary}"
+            HasShadow="true" 
+            CornerRadius="0" 
+            Padding="10"
+            OutlineColor="{StaticResource Primary}"
+            BorderColor="{StaticResource Primary}"
+            HeightRequest="70">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition  Width="45"/>
+                    <ColumnDefinition  Width="*"/>
+                    <ColumnDefinition  Width="45"/>
+                </Grid.ColumnDefinitions>
+                <Bases:IconAwesomeButtonBase 
+                    BackgroundColor="{StaticResource Primary}"
+                    BorderColor="{StaticResource Primary}"
+                    Command="{Binding ShowMenuCommand}"
+                    FontSize="20"
+                    TextColor="White"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    FontIcon="Light" 
+                    Icon="Bars"/>
+                <Bases:LabelBase
+                   FontSize="13"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    DefineFont="Primary"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="{Binding TitleToolbar}"
+                    TextColor="White"/>
+                <Bases:IconAwesomeButtonBase 
+                    BackgroundColor="{StaticResource Primary}"
+                    BorderColor="{StaticResource Primary}"
+                    Command="{Binding CloseSessionCommand}"
+                    FontSize="18"
+                    TextColor="White"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    FontIcon="Light" 
+                    Icon="PowerOff"/>
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
