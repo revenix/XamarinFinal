@@ -5,7 +5,7 @@
              x:Class="TemplateSpartaneApp.Views.Session.LogInPage">
 
 
-    <Grid Margin="16" BackgroundColor="Navy">
+    <Grid Margin="0" BackgroundColor="Navy">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -24,11 +24,20 @@
             Grid.Column="0"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand">
+            <Bases:LabelBase Text="{Binding ErrorMessage}" 
+                             DefineFont="Secondary" TextColor="Red" FontSize="Small"
+                             IsVisible="{Binding ShowErrorMessage}" />
+            
+
             <Bases:LabelBase DefineFont="Primary"
                               Text="Email"
                              TextColor="White" FontSize="Small" />
 
-            <Bases:BorderEntryBase BorderWidth="2" CornerRadius="5" PlaceholderColor="Silver"
+            <Bases:BorderEntryBase
+                Text="{Binding User.Email}"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                BorderWidth="2" CornerRadius="5" PlaceholderColor="Silver"
                                    Placeholder="Email..."
                                    BorderColor="White"
                                    />
@@ -36,12 +45,33 @@
                               Text="Password"
                              TextColor="White" FontSize="Small" />
 
-            <Bases:BorderEntryBase BorderWidth="2" CornerRadius="5" PlaceholderColor="Silver"
+            <Bases:BorderEntryBase 
+                TextColor="White"
+                Text="{Binding User.Password}"
+                BackgroundColor="Transparent"
+                IsPassword="True"
+                BorderWidth="2" CornerRadius="5" PlaceholderColor="Silver"
                                    Placeholder="Password..."
                                    BorderColor="White"
                                    />
-
+            <Bases:ButtonBase 
+            VerticalOptions="Center"
+            BorderColor="Transparent"
+            Command="{Binding OnlogInCommand}"
+            
+            TextColor="White"
+            BackgroundColor="Transparent" Text="Log In?"
+            Grid.Row="1"
+            Grid.Column="0" />
+            
         </StackLayout>
+        <Bases:ButtonBase 
+            VerticalOptions="Center"
+            BorderColor="Transparent"
+            TextColor="White"
+            BackgroundColor="Transparent" Text="Forgot password?"
+            Grid.Row="2"
+            Grid.Column="0" />
 
     </Grid>
 
