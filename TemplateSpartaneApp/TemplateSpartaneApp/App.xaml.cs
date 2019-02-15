@@ -13,6 +13,7 @@ using SQLite;
 using System;
 using System.Diagnostics;
 using TemplateSpartaneApp.ApiServices.Catalogs.ProgressReport;
+using TemplateSpartaneApp.ApiServices.Catalogs.SessionService;
 using TemplateSpartaneApp.ApiServices.Catalogs.SpartaneUser;
 using TemplateSpartaneApp.ApiServices.Catalogs.SpartanFile;
 using TemplateSpartaneApp.DependencyServices;
@@ -80,6 +81,8 @@ namespace TemplateSpartaneApp
             containerRegistry.Register<ISpartaneFileService, SpartanFileService>();
             containerRegistry.Register<IProgressReportService, ProgressReportService>();
             containerRegistry.Register<ISpartaneUserService, SpartaneUserService>();
+            containerRegistry.Register<IClienteService , ClientService>();
+
             #endregion
 
             #region Instances

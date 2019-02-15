@@ -66,7 +66,7 @@ namespace TemplateSpartaneApp.ViewModels.Session
 
             ShowErrorMessage = false;
             Profile.Instance.Email = User.Email;
-            Profile.Instance.UserName = User.Password;
+            Profile.Instance.UserName = User.Password   ;
             AppSettings.Instance.Logged = true;
             await UserDialogsService.AlertAsync("Welcome !" , "" , "Ok");
            await  NavigationService.NavigateAsync("http://template.com/Index/Navigation/Home");

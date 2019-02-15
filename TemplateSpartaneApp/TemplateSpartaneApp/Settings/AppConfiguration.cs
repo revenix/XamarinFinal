@@ -1,6 +1,6 @@
-#define DEVELOPMENT
+//#define DEVELOPMENT
 //#define PRODUCTION
-//#define DEMO
+#define DEMO
 //#define TESTING
 
 using Newtonsoft.Json;
