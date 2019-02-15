@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Acr.UserDialogs;
@@ -54,13 +54,13 @@ namespace TemplateSpartaneApp.ViewModels.Session
             if (string.IsNullOrEmpty(User.Email))
             {
                 ShowErrorMessage = true;
-                ErrorMessage = "*Error Email";
+                ErrorMessage = "* Error Email";
                 return;
             }
             else if(string.IsNullOrEmpty(User.Password))
             {
                 ShowErrorMessage = true;
-                ErrorMessage = "*Error Password";
+                ErrorMessage = "* Error Password";
                 return;
             }
 

@@ -1,4 +1,4 @@
-﻿#define DEVELOPMENT
+#define DEVELOPMENT
 //#define PRODUCTION
 //#define DEMO
 //#define TESTING

@@ -1,6 +1,6 @@
-﻿{
-  "BaseUrl": "http://www.spartane.com/ALMwebapi/api",
-  "UrlToken": "http://www.spartane.com/ALMwebapi/oauth/token",
+{
+  "BaseUrl": "http://www.totalcase.com.mx/WebApiSaficinemasDEMO3/api",
+  "UrlToken": "http://www.totalcase.com.mx/WebApiSaficinemasDEMO3/oauth/token",
   "BaseUrlImage": "",
   "UserToken": "admin",
   "PassToken": "admin",
