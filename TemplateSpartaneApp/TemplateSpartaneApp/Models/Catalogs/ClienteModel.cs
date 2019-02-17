@@ -1,6 +1,8 @@
 using Newtonsoft.Json;
+using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace TemplateSpartaneApp.Models.Catalogs
@@ -14,7 +16,7 @@ namespace TemplateSpartaneApp.Models.Catalogs
     public long RowCount { get; set; }
   }
 
-  public class ClienteModel {
+  public class ClienteModel : BindableBase {
     [JsonProperty("Folio")]
     public long Folio { get; set; }
 
@@ -26,10 +28,23 @@ namespace TemplateSpartaneApp.Models.Catalogs
 
     [JsonProperty("Usuario_que_Registra")]
     public long UsuarioQueRegistra { get; set; }
+    [JsonIgnore]
+    private string nombreCompleto ;  
 
     [JsonProperty("Nombre_Completo")]
-    public string NombreCompleto { get; set; }
+    public string NombreCompleto {
+      get => nombreCompleto;
+      set => SetProperty(ref nombreCompleto , value); }
 
+    [JsonIgnore]
+    private Color back;
+
+    [JsonIgnore]
+    public Color Back {
+      get => back;
+      set => SetProperty(ref back , value);
+
+    }
     [JsonProperty("Nombre")]
     public string Nombre { get; set; }
 

@@ -1,4 +1,4 @@
-﻿using Refit;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,15 +7,12 @@ using TemplateSpartaneApp.Models.Catalogs;
 
 namespace TemplateSpartaneApp.ApiServices.Catalogs.SessionService
 {
-    public interface IClienteService
+    public interface IClientService
     {
         [Get("/Cliente/listaSelAll")]
         [Headers("Authorization: Bearer")]
         Task<ClienteListModel> GetWhereClient(int startRowIndex = 0, int maximumRows = 100, string where = null, string order = null);
-
-
-
-
+     
 
     }
 

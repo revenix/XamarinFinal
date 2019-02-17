@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Bases:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -22,6 +22,7 @@
 
         <StackLayout  Grid.Row="1"
             Grid.Column="0"
+                      Padding="5"
                       HorizontalOptions="FillAndExpand"
                       VerticalOptions="FillAndExpand">
             <Bases:LabelBase Text="{Binding ErrorMessage}" 
@@ -57,10 +58,8 @@
             <Bases:ButtonBase 
             VerticalOptions="Center"
             BorderColor="Transparent"
-            Command="{Binding OnlogInCommand}"
-            
-            TextColor="White"
-            BackgroundColor="Transparent" Text="Log In?"
+            Command="{Binding OnlogInCommand}" 
+            BackgroundColor="White" Text="Log In?"
             Grid.Row="1"
             Grid.Column="0" />
             

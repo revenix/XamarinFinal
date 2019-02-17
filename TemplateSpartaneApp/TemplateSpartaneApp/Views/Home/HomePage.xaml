@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Bases:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
@@ -13,7 +13,28 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Bases:ToolbarBase Grid.Row="0" Grid.Column="0"/>
-            <ScrollView Grid.Row="1" Grid.Column="0">
+
+
+      <ListView ItemsSource="{Binding Items}"
+                SelectedItem="{Binding Client}"
+                Grid.Row="1"  Grid.Column="0">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout BackgroundColor="{Binding Back}">
+
+                <Label Text="{Binding NombreCompleto}" />
+
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+          
+        </ListView.ItemTemplate>
+
+      </ListView>
+
+
+      <ScrollView Grid.Row="1" Grid.Column="0" IsVisible="False">
                 <StackLayout Margin="16">
                     <Bases:LabelBase Text="Entries" DefineFont="Secondary" TextColor="{StaticResource DarkPrimary}"/>
                     <Bases:BorderEntryBase 

@@ -1,4 +1,4 @@
-﻿using Acr.UserDialogs;
+using Acr.UserDialogs;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -81,7 +81,7 @@ namespace TemplateSpartaneApp
             containerRegistry.Register<ISpartaneFileService, SpartanFileService>();
             containerRegistry.Register<IProgressReportService, ProgressReportService>();
             containerRegistry.Register<ISpartaneUserService, SpartaneUserService>();
-            containerRegistry.Register<IClienteService , ClientService>();
+            containerRegistry.Register<IClientService , ClientService>();
 
             #endregion
 

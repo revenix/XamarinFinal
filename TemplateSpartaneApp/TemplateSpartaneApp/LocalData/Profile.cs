@@ -1,4 +1,4 @@
-﻿using Plugin.Settings.Abstractions;
+using Plugin.Settings.Abstractions;
 
 namespace TemplateSpartaneApp.LocalData
 {
@@ -42,7 +42,7 @@ namespace TemplateSpartaneApp.LocalData
         /// <summary>
         /// User Identifier
         /// </summary>
-        public int Identifier
+        public long Identifier
         {
             get
             {
@@ -113,7 +113,7 @@ namespace TemplateSpartaneApp.LocalData
         /// </summary>
         public void ClearValues()
         {
-            Identifier = default(int);
+            Identifier = default(long);
             Email = default(string);
             Name = default(string);
             Phone = default(string);

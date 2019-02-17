@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using Refit;
 using System;
 using System.Collections.Generic;
@@ -10,12 +10,12 @@ using TemplateSpartaneApp.Settings;
 
 namespace TemplateSpartaneApp.ApiServices.Catalogs.SessionService
 {
-    public class ClientService : IClienteService
+    public class ClientService : IClientService
     {
-        private readonly IClienteService services;
+        private readonly IClientService services;
         public ClientService(){
 
-            services = RestService.For<IClienteService>(new HttpClient(new HttpLoggingHandler(TokenManager.GetToken)) { BaseAddress = new Uri(AppConfiguration.Values.BaseUrl) }, new RefitSettings
+            services = RestService.For<IClientService>(new HttpClient(new HttpLoggingHandler(TokenManager.GetToken)) { BaseAddress = new Uri(AppConfiguration.Values.BaseUrl) }, new RefitSettings
             {
                 JsonSerializerSettings = new JsonSerializerSettings
                 {
