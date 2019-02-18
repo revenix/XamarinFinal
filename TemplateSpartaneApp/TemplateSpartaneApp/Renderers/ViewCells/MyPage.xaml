@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TemplateSpartaneApp.Renderers.ViewCells.MyPage"  >
+
+
+  <StackLayout BackgroundColor="{Binding Back}" >
+    
+    <Bases:LabelBase  DefineFont="Primary"  Text="{Binding NombreCompleto}" />
+
+    <Bases:ButtonBase Command="{Binding UpCommand}" Text="Phone" />
+    <StackLayout.GestureRecognizers>
+      <TapGestureRecognizer Command="{Binding Select}" /> 
+
+    </StackLayout.GestureRecognizers>
+  </StackLayout>
+</ViewCell>

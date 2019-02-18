@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Bases:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+                        xmlns:Bases="clr-namespace:TemplateSpartaneApp.Renderers.Bases"
+             xmlns:ViewCells="clr-namespace:TemplateSpartaneApp.Renderers.ViewCells"
+                       
              x:Class="TemplateSpartaneApp.Views.Home.HomePage">
     <ContentPage.Content>
         <Grid ColumnSpacing="0" RowSpacing="0">
@@ -15,24 +17,22 @@
             <Bases:ToolbarBase Grid.Row="0" Grid.Column="0"/>
 
 
-      <ListView ItemsSource="{Binding Items}"
+      <ListView
+            HasUnevenRows="False"
+             RowHeight="150"
+            SeparatorVisibility="None"
+        ItemsSource="{Binding Items}"
                 SelectedItem="{Binding Client}"
                 Grid.Row="1"  Grid.Column="0">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ViewCell>
-              <StackLayout BackgroundColor="{Binding Back}">
-
-                <Label Text="{Binding NombreCompleto}" />
-
-              </StackLayout>
-            </ViewCell>
+            <ViewCells:MyPage/>
+  
           </DataTemplate>
           
         </ListView.ItemTemplate>
 
       </ListView>
-
 
       <ScrollView Grid.Row="1" Grid.Column="0" IsVisible="False">
                 <StackLayout Margin="16">
